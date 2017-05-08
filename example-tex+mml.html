@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Example MathJax v3 with TeX and MathML input</title>
+<script src="v3/lib/traceur.min.js"></script>
+<script src="v3/lib/system.js"></script>
+<script>
+window.addEventListener("load",function () {
+  System.import('config/tex+mml2chtml.js').catch(function (error) {
+    console.log("MathJax error: "+error.message);
+  });
+});
+</script>
+</head>
+<body>
+
+<p>
+This is math in TeX format: \(x_1\) and \[\sqrt{x+1\over x^2+1}.\]
+</p>
+
+<p>
+Here is MathML: <math><msub><mi>x</mi><mn>1</mn></msub></math> and
+<math display="block">
+  <msqrt>
+    <mfrac>
+      <mrow>
+        <mi>x</mi><mo>+</mo><mn>1</mn>
+      </mrow>
+      <mrow>
+        <msup><mi>x</mi><mn>2</mn></msup><mo>+</mo><mn>1</mn>
+      </mrow>
+    </mfrac>
+  </msqrt>
+</math>
+</p>
+
+</body>
+</html>
+
+
