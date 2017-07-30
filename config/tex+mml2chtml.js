@@ -1,21 +1,21 @@
-import {MathJax} from "../v3/mathjax3/mathjax.js";
-import "../v3/mathjax3/handlers/html.js";
-import {TeX} from "../v3/mathjax3/input/tex.js";
-import {MathML} from "../v3/mathjax3/input/mathml.js";
-import {CHTML} from "../v3/mathjax3/output/chtml.js";
+import {MathJax} from "../mathjax3/mathjax.js";
+import "../mathjax3/handlers/html.js";
+import {TeX} from "../mathjax3/input/tex.js";
+import {MathML} from "../mathjax3/input/mathml.js";
+import {CHTML} from "../mathjax3/output/chtml.js";
 
-let html = MathJax.Document(document, {
+let html = MathJax.document(document, {
   InputJax: [new TeX(), new MathML()],
   OutputJax: new CHTML()
 });
 
-MathJax.HandleRetriesFor(function () {
+MathJax.handleRetriesFor(function () {
 
-    html.FindMath()
-        .Compile()
-        .GetMetrics()
-        .Typeset()
-        .UpdateDocument();
+    html.findMath()
+        .compile()
+        .getMetrics()
+        .typeset()
+        .updateDocument();
 
 }).catch(err => {
   console.log(err.message);
