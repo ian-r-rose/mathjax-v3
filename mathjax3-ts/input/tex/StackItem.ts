@@ -26,7 +26,7 @@
 
 import MapHandler from './MapHandler.js';
 import {CharacterMap} from './SymbolMap.js';
-import {MmlEntities} from '../mathml/MmlEntities.js';
+import {Entities} from '../../util/Entities.js';
 import {MmlNode, TextNode, TEXCLASS} from '../../core/MmlTree/MmlNode.js';
 import {MmlMsubsup} from '../../core/MmlTree/MmlNodes/msubsup.js';
 import {TexConstant} from './TexConstants.js';
@@ -795,7 +795,7 @@ export class FnItem extends BaseItem {
         }
       }
       // @test Named Function
-      var text = TreeHelper.createText(MmlEntities.ENTITIES.ApplyFunction);
+      var text = TreeHelper.createText(Entities.ENTITIES.ApplyFunction);
       // TODO: Texclass should probably be set and not given as attribute!
       var node = TreeHelper.createNode('mo', [], {texClass: TEXCLASS.NONE}, text);
       // VS: OLD
